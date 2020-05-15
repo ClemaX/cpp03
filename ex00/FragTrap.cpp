@@ -1,11 +1,11 @@
 #include "FragTrap.hpp"
 
-Attack::Attack(std::string name, int damage)
+FragTrap::Attack::Attack(std::string name, int damage)
 	: name(name), damage(damage)
 {
 }
 
-Attack::Attack(std::string name, int damage, int cost)
+FragTrap::Attack::Attack(std::string name, int damage, int cost)
 	: name(name), damage(damage), cost(cost)
 {
 }
@@ -25,7 +25,7 @@ FragTrap::~FragTrap()
 	std::cout << std::endl;
 }
 
-void performAttack(std::string &source, std::string const &target, Attack const &attack)
+void performAttack(std::string &source, std::string const &target, FragTrap::Attack const &attack)
 {
 	std::cout << "FR4G-TP ";
 	std::cout << source << " attacks " << target << ' ';

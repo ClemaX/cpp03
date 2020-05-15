@@ -6,20 +6,20 @@
 # include <array>
 # include <random>
 
-class Attack
-{
-public:
-	std::string name;
-	int damage;
-	int cost = 0;
-
-	Attack(std::string name, int damage);
-	Attack(std::string name, int damage, int energyCost);
-};
-
 class FragTrap
 {
 public:
+	class Attack
+	{
+	public:
+		std::string name;
+		int damage;
+		int cost = 0;
+
+		Attack(std::string name, int damage);
+		Attack(std::string name, int damage, int energyCost);
+	};
+
 	int level = 1;
 	int hitPoints = 100;
 	int maxHitPoints = 100;

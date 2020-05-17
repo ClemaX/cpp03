@@ -1,11 +1,11 @@
 #include "FragTrap.hpp"
 
-FragTrap::Attack::Attack(std::string name, int damage)
+FragTrap::Attack::Attack(std::string name, unsigned int damage)
 	: name(name), damage(damage)
 {
 }
 
-FragTrap::Attack::Attack(std::string name, int damage, int cost)
+FragTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cost)
 	: name(name), damage(damage), cost(cost)
 {
 }

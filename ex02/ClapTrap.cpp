@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::Attack::Attack(std::string name, int damage)
+ClapTrap::Attack::Attack(std::string name, unsigned int damage)
 	: name(name), damage(damage)
 {
 }
 
-ClapTrap::Attack::Attack(std::string name, int damage, int cost)
+ClapTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cost)
 	: name(name), damage(damage), cost(cost)
 {
 }

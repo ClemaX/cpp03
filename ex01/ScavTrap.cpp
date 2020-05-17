@@ -1,11 +1,11 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::Attack::Attack(std::string name, int damage)
+ScavTrap::Attack::Attack(std::string name, unsigned int damage)
 	: name(name), damage(damage)
 {
 }
 
-ScavTrap::Attack::Attack(std::string name, int damage, int cost)
+ScavTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cost)
 	: name(name), damage(damage), cost(cost)
 {
 }

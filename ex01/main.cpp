@@ -15,10 +15,10 @@ int main(void)
 	c.meleeAttack(d.name);
 	d.rangedAttack(c.name);
 
-	for (int i = 0; i < a.specialAttacks.size(); i++)
+	for (std::size_t i = 0; i < a.specialAttacks.size(); i++)
 		a.vaulthunter_dot_exe(b.name);
 
-	for (int i = 0; i < c.challenges.size(); i++)
+	for (std::size_t i = 0; i < c.challenges.size(); i++)
 		c.challengeNewcomer();
 
 	return 0;

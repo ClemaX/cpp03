@@ -13,19 +13,19 @@ public:
 	{
 	public:
 		std::string name;
-		int damage;
-		int cost = 0;
+		unsigned int damage;
+		unsigned int cost = 0;
 
-		Attack(std::string name, int damage);
-		Attack(std::string name, int damage, int energyCost);
+		Attack(std::string name, unsigned int damage);
+		Attack(std::string name, unsigned int damage, unsigned int energyCost);
 	};
 
-	int level = 1;
-	int hitPoints = 100;
-	int maxHitPoints = 100;
-	int energyPoints = 100;
-	int maxEnergyPoints = 100;
-	int armorReduction = 5;
+	unsigned int level = 1;
+	unsigned int hitPoints = 100;
+	unsigned int maxHitPoints = 100;
+	unsigned int energyPoints = 100;
+	unsigned int maxEnergyPoints = 100;
+	unsigned int armorReduction = 5;
 
 	Attack melee = Attack("melee", 30);
 	Attack ranged = Attack("ranged", 30);

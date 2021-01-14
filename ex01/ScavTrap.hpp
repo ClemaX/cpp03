@@ -1,10 +1,9 @@
-#ifndef SCAV_TRAP_H
-# define SCAV_TRAP_H
+#pragma once
 
-# include <string>
-# include <iostream>
-# include <array>
-# include <random>
+#include <string>
+#include <iostream>
+#include <array>
+#include <random>
 
 class ScavTrap
 {
@@ -49,5 +48,3 @@ public:
 	void beRepaired(unsigned int amount);
 	void challengeNewcomer(void);
 };
-
-#endif

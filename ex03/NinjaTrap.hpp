@@ -1,9 +1,8 @@
-#ifndef NINJA_TRAP_H
-# define NINJA_TRAP_H
+#pragma once
 
-# include "ClapTrap.hpp"
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 class NinjaTrap : public ClapTrap
 {
@@ -16,5 +15,3 @@ public:
 	void ninjaShoebox(ScavTrap const &scav);
 	void ninjaShoebox(NinjaTrap const &ninja);
 };
-
-#endif

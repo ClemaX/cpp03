@@ -1,10 +1,9 @@
-#ifndef FRAG_TRAP_H
-# define FRAG_TRAP_H
+#pragma once
 
-# include <string>
-# include <iostream>
-# include <array>
-# include <random>
+#include <string>
+#include <iostream>
+#include <array>
+#include <random>
 
 class FragTrap
 {
@@ -48,5 +47,3 @@ public:
 	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const &target);
 };
-
-#endif

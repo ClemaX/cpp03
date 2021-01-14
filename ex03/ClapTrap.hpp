@@ -1,10 +1,9 @@
-#ifndef CLAP_TRAP_H
-# define CLAP_TRAP_H
+#pragma once
 
-# include <string>
-# include <iostream>
-# include <array>
-# include <random>
+#include <string>
+#include <iostream>
+#include <array>
+#include <random>
 
 class ClapTrap
 {
@@ -41,5 +40,3 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };
-
-#endif

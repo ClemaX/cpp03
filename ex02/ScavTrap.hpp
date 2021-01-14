@@ -1,7 +1,6 @@
-#ifndef SCAV_TRAP_H
-# define SCAV_TRAP_H
+#pragma once
 
-# include "ClapTrap.hpp"
+#include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
@@ -27,5 +26,3 @@ public:
 	void performAttack(std::string &source, std::string const &target, ClapTrap::Attack const &attack);
 	void challengeNewcomer(void);
 };
-
-#endif

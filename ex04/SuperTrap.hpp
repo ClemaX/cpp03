@@ -1,8 +1,7 @@
-#ifndef SUPER_TRAP_H
-# define SUPER_TRAP_H
+#pragma once
 
-# include "FragTrap.hpp"
-# include "NinjaTrap.hpp"
+#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {
@@ -25,5 +24,3 @@ public:
     using FragTrap::rangedAttack;
     using NinjaTrap::meleeAttack;
 };
-
-#endif

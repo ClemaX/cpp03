@@ -1,7 +1,6 @@
-#ifndef FRAG_TRAP_H
-# define FRAG_TRAP_H
+#pragma once
 
-# include "ClapTrap.hpp"
+#include "ClapTrap.hpp"
 
 class FragTrap : virtual public ClapTrap
 {
@@ -20,5 +19,3 @@ public:
 	void performAttack(std::string &source, std::string const &target, ClapTrap::Attack const &attack);
 	void vaulthunter_dot_exe(std::string const &target);
 };
-
-#endif

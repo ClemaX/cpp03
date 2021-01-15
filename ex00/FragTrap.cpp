@@ -1,7 +1,22 @@
 #include "FragTrap.hpp"
 
+const FragTrap::Attack FragTrap::melee = Attack("melee", 30);
+
+const FragTrap::Attack FragTrap::ranged = Attack("ranged", 30);
+
+const size_t FragTrap::specialAttacksCount = 5;
+
+const FragTrap::Attack FragTrap::specialAttacks[FragTrap::specialAttacksCount] =
+{
+	Attack("a pan", 5, 25),
+	Attack("his feet", 10, 25),
+	Attack("a magic wand", 10, 25),
+	Attack("his bare hands", 5, 25),
+	Attack("nuclear power", 1000, 25)
+};
+
 FragTrap::Attack::Attack(std::string name, unsigned int damage)
-	: name(name), damage(damage)
+	: name(name), damage(damage), cost(0)
 {
 }
 
@@ -11,7 +26,12 @@ FragTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cos
 }
 
 FragTrap::FragTrap(std::string name)
-	: name(name)
+	:	//level(1),
+		hitPoints(100),
+		maxHitPoints(100),
+		// maxEnergyPoints(100),
+		armorReduction(5),
+		name(name)
 {
 	std::cout << "FR4G-TP ";
 	std::cout << "Constructing " << name << '!';
@@ -68,7 +88,8 @@ void FragTrap::beRepaired(unsigned int amount)
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
-	Attack &attack = specialAttacks[rand() % specialAttacks.size()];
+	const Attack &attack = specialAttacks[rand() % specialAttacksCount];
+
 	if (attack.cost > energyPoints)
 	{
 		std::cout << "FR4G-TP ";

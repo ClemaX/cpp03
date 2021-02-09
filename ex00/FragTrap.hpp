@@ -8,16 +8,14 @@
 class FragTrap
 {
 protected:
-	const std::string	name;
+	unsigned int	level;
 
-	unsigned int		level;
+	unsigned int	maxHitPoints;
+	unsigned int	maxEnergyPoints;
+	unsigned int	armorReduction;
 
-	unsigned int		maxHitPoints;
-	unsigned int		maxEnergyPoints;
-	unsigned int		armorReduction;
-
-	unsigned int		hitPoints;
-	unsigned int		energyPoints;
+	unsigned int	hitPoints;
+	unsigned int	energyPoints;
 
 	struct Attack
 	{
@@ -38,6 +36,8 @@ protected:
 		FragTrap::Attack const& attack);
 
 public:
+	const std::string	name;
+
 	FragTrap(std::string const& name);
 	~FragTrap();
 

@@ -34,21 +34,32 @@ ClapTrap::~ClapTrap()
 	std::cout << std::endl;
 }
 
-void ClapTrap::performAttack(ClapTrap const &target, ClapTrap::Attack const &attack)
+void ClapTrap::performAttack(ClapTrap& target, ClapTrap::Attack const& attack)
 {
 	std::cout << "CL4P-TP ";
-	std::cout << name << " attacks " << target.name << ' ';
-	std::cout << "with " << attack.name << ", ";
-	std::cout << "causing " << attack.damage << " points of damage!";
-	std::cout << std::endl;
+	if (attack.cost > energyPoints)
+	{
+		std::cout << name << " does not have enough energy to use " << attack.name << "!";
+		std::cout << std::endl;
+	}
+	else
+	{
+		std::cout << name << " attacks " << target.name << ' ';
+		std::cout << "with " << attack.name << ", ";
+		std::cout << "causing " << attack.damage << " points of damage!";
+		std::cout << std::endl;
+
+		energyPoints -= attack.cost;
+		target.takeDamage(attack.damage);
+	}
 }
 
-void ClapTrap::rangedAttack(std::string const &target)
+void ClapTrap::rangedAttack(ClapTrap& target)
 {
 	performAttack(target, ranged);
 }
 
-void ClapTrap::meleeAttack(std::string const &target)
+void ClapTrap::meleeAttack(ClapTrap& target)
 {
 	performAttack(target, melee);
 }
@@ -58,10 +69,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 	amount -= armorReduction;
 	if (amount > hitPoints)
 		amount = hitPoints;
+
 	std::cout << "CL4P-TP ";
-	std::cout << '<' << name << "> ";
-	std::cout << "takes " << amount << " points of damage!";
+	std::cout << name;
+	std::cout << " takes " << amount << " points of damage!";
 	std::cout << std::endl;
+
 	hitPoints -= amount;
 }
 
@@ -69,8 +82,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (hitPoints + amount > maxHitPoints)
 		amount = maxHitPoints - hitPoints;
+
 	std::cout << "CL4P-TP ";
 	std::cout << name << " heals " << amount << " hit points!";
 	std::cout << std::endl;
+
 	hitPoints += amount;
 }

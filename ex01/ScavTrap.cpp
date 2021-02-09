@@ -26,12 +26,12 @@ ScavTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cos
 }
 
 ScavTrap::ScavTrap(std::string const& name)
-	:	name(name),
-		maxHitPoints(100),
+	:	maxHitPoints(100),
 		maxEnergyPoints(50),
 		armorReduction(3),
 		hitPoints(maxHitPoints),
-		energyPoints(maxEnergyPoints)
+		energyPoints(maxEnergyPoints),
+		name(name)
 {
 	std::cout << "SC4V-TP ";
 	std::cout << "Constructing " << name << '!';

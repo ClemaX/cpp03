@@ -17,17 +17,23 @@ int main(void)
 
 	SuperTrap h = SuperTrap("Samuel");
 
+	std::cout << std::endl;
+
 	a.meleeAttack(b.name);
 	b.rangedAttack(a.name);
 
 	c.meleeAttack(d.name);
 	d.rangedAttack(c.name);
 
-	for (std::size_t i = 0; i < a.specialAttacks.size(); i++)
+	std::cout << std::endl;
+
+	for (std::size_t i = 0; i < 5; i++)
 		a.vaulthunter_dot_exe(b.name);
 
-	for (std::size_t i = 0; i < c.challenges.size(); i++)
+	for (std::size_t i = 0; i < 5; i++)
 		c.challengeNewcomer();
+
+	e.meleeAttack(f);
 
 	e.ninjaShoebox(a);
 	f.ninjaShoebox(c);
@@ -36,9 +42,9 @@ int main(void)
 	h.meleeAttack(e.name);
 	h.rangedAttack(f.name);
 
-	for (std::size_t i = 0; i < h.specialAttacks.size(); i++)
+	for (std::size_t i = 0; i < 5; i++)
 		h.vaulthunter_dot_exe(g.name);
-	
+
 	h.ninjaShoebox(a);
 	h.ninjaShoebox(c);
 	h.ninjaShoebox(e);

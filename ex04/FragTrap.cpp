@@ -1,5 +1,15 @@
 #include "FragTrap.hpp"
 
+const size_t	FragTrap::specialAttacksCount = 5;
+const FragTrap::Attack FragTrap::specialAttacks[FragTrap::specialAttacksCount] =
+{
+	Attack("a pan", 5, 25),
+	Attack("his feet", 10, 25),
+	Attack("a magic wand", 10, 25),
+	Attack("his bare hands", 5, 25),
+	Attack("nuclear power", 1000, 25)
+};
+
 FragTrap::FragTrap(std::string name)
 	: ClapTrap(name)
 {
@@ -15,18 +25,20 @@ FragTrap::~FragTrap()
 	std::cout << std::endl;
 }
 
-void FragTrap::performAttack(std::string &source, std::string const &target, ClapTrap::Attack const &attack)
-{	
+void FragTrap::performAttack(ClapTrap& target, ClapTrap::Attack const& attack) const
+{
 	std::cout << "FR4G-TP ";
-	std::cout << source << " attacks " << target << ' ';
+	std::cout << name << " attacks " << target.name << ' ';
 	std::cout << "with " << attack.name << ", ";
 	std::cout << "causing " << attack.damage << " points of damage!";
+	target.takeDamage(attack.damage);
 	std::cout << std::endl;
 }
 
-void FragTrap::vaulthunter_dot_exe(std::string const &target)
+void FragTrap::vaulthunter_dot_exe(ClapTrap const& target)
 {
-	Attack &attack = specialAttacks[rand() % specialAttacks.size()];
+	Attack const&	attack = specialAttacks[rand() % specialAttacksCount];
+
 	if (attack.cost > energyPoints)
 	{
 		std::cout << "FR4G-TP ";
@@ -36,6 +48,6 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 	else
 	{
 		energyPoints -= attack.cost;
-		performAttack(name, target, attack);
+		performAttack(target, attack);
 	}
 }

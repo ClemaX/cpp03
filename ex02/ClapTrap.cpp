@@ -14,13 +14,13 @@ ClapTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cos
 }
 
 ClapTrap::ClapTrap(std::string name)
-	:	name(name),
-		level(1),
+	:	level(1),
 		maxHitPoints(100),
 		maxEnergyPoints(100),
 		armorReduction(5),
 		hitPoints(maxHitPoints),
-		energyPoints(maxEnergyPoints)
+		energyPoints(maxEnergyPoints),
+		name(name)
 {
 	std::cout << "CL4P-TP ";
 	std::cout << "Constructing " << name << '!';

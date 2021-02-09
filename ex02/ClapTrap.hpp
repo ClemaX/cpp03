@@ -8,8 +8,6 @@
 class ClapTrap
 {
 protected:
-	const std::string	name;
-
 	unsigned int		level;
 
 	unsigned int		maxHitPoints;
@@ -36,6 +34,8 @@ protected:
 	void performAttack(ClapTrap const& target, ClapTrap::Attack const& attack);
 
 public:
+	const std::string	name;
+
 	ClapTrap(std::string name);
 	~ClapTrap();
 

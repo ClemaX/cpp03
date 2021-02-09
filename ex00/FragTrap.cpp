@@ -26,13 +26,13 @@ FragTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cos
 }
 
 FragTrap::FragTrap(std::string const& name)
-	:	name(name),
-		level(1),
+	:	level(1),
 		maxHitPoints(100),
 		maxEnergyPoints(100),
 		armorReduction(5),
 		hitPoints(maxHitPoints),
-		energyPoints(maxEnergyPoints)
+		energyPoints(maxEnergyPoints),
+		name(name)
 {
 	std::cout << "FR4G-TP ";
 	std::cout << "Constructing " << name << '!';

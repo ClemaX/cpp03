@@ -9,16 +9,16 @@ int main(void)
 	ScavTrap c = ScavTrap("Charlie");
 	ScavTrap d = ScavTrap("Delta");
 
-	a.meleeAttack(b.name);
-	b.rangedAttack(a.name);
+	a.meleeAttack(b);
+	b.rangedAttack(a);
 
-	c.meleeAttack(d.name);
-	d.rangedAttack(c.name);
+	c.meleeAttack(d);
+	d.rangedAttack(c);
 
-	for (std::size_t i = 0; i < a.specialAttacks.size(); i++)
-		a.vaulthunter_dot_exe(b.name);
+	for (std::size_t i = 0; i < 5; i++)
+		a.vaulthunter_dot_exe(b);
 
-	for (std::size_t i = 0; i < c.challenges.size(); i++)
+	for (std::size_t i = 0; i < 5; i++)
 		c.challengeNewcomer();
 
 	return 0;

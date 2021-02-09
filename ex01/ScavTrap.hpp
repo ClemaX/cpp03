@@ -7,43 +7,43 @@
 
 class ScavTrap
 {
-public:
-	class Attack
+protected:
+	const std::string	name;
+
+	unsigned int		level;
+
+	unsigned int		maxHitPoints;
+	unsigned int		maxEnergyPoints;
+	unsigned int		armorReduction;
+
+	unsigned int		hitPoints;
+	unsigned int		energyPoints;
+
+	struct Attack
 	{
-	public:
-		std::string name;
-		unsigned int damage;
-		unsigned int cost = 0;
+		const std::string name;
+		const unsigned int damage;
+		const unsigned int cost;
 
 		Attack(std::string name, unsigned int damage);
 		Attack(std::string name, unsigned int damage, unsigned int energyCost);
 	};
 
-	unsigned int level = 1;
-	unsigned int hitPoints = 100;
-	unsigned int maxHitPoints = 100;
-	unsigned int energyPoints = 50;
-	unsigned int maxEnergyPoints = 50;
-	unsigned int armorReduction = 3;
+	static const Attack melee;
+	static const Attack ranged;
 
-	Attack melee = Attack("melee", 20);
-	Attack ranged = Attack("ranged", 15);
+	static const size_t			challengesCount;
+	static const std::string	challenges[];
 
-	std::array<std::string, 5> challenges = {
-		"Invent a challenge!",
-		"Think about inventing a challenge!",
-		"Think about thinking about inventing a challenge!",
-		"Think about thinking about thinking about inventing a challenge!",
-		"Do not think about inventing a challenge"
-	};
+	void	performAttack(ScavTrap const& target,
+		ScavTrap::Attack const& attack);
 
-	std::string name;
-
-	ScavTrap(std::string name);
+public:
+	ScavTrap(std::string const& name);
 	~ScavTrap();
 
-	void rangedAttack(std::string const &target);
-	void meleeAttack(std::string const &target);
+	void rangedAttack(ScavTrap const& target);
+	void meleeAttack(ScavTrap const& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void challengeNewcomer(void);

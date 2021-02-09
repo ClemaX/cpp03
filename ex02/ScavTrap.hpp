@@ -8,16 +8,14 @@
 class ScavTrap
 {
 protected:
-	const std::string	name;
+	unsigned int	level;
 
-	unsigned int		level;
+	unsigned int	maxHitPoints;
+	unsigned int	maxEnergyPoints;
+	unsigned int	armorReduction;
 
-	unsigned int		maxHitPoints;
-	unsigned int		maxEnergyPoints;
-	unsigned int		armorReduction;
-
-	unsigned int		hitPoints;
-	unsigned int		energyPoints;
+	unsigned int	hitPoints;
+	unsigned int	energyPoints;
 
 	struct Attack
 	{
@@ -39,6 +37,8 @@ protected:
 		ScavTrap::Attack const& attack);
 
 public:
+	const std::string	name;
+
 	ScavTrap(std::string const& name);
 	~ScavTrap();
 

@@ -23,8 +23,8 @@ protected:
 		const unsigned int damage;
 		const unsigned int cost;
 
-		Attack(std::string name, unsigned int damage);
-		Attack(std::string name, unsigned int damage, unsigned int energyCost);
+		Attack(std::string const& name, unsigned int damage);
+		Attack(std::string const& name, unsigned int damage, unsigned int energyCost);
 	};
 
 	static const Attack melee;
@@ -33,8 +33,7 @@ protected:
 	static const size_t			challengesCount;
 	static const std::string	challenges[];
 
-	void	performAttack(ScavTrap const& target,
-		ScavTrap::Attack const& attack);
+	void	performAttack(ScavTrap& target, ScavTrap::Attack const& attack);
 
 public:
 	const std::string	name;
@@ -42,9 +41,11 @@ public:
 	ScavTrap(std::string const& name);
 	~ScavTrap();
 
-	void rangedAttack(ScavTrap const& target);
-	void meleeAttack(ScavTrap const& target);
+	void rangedAttack(ScavTrap& target);
+	void meleeAttack(ScavTrap& target);
+
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+
 	void challengeNewcomer(void);
 };

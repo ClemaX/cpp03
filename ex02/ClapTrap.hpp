@@ -24,23 +24,27 @@ protected:
 		const unsigned int	damage;
 		const unsigned int	cost;
 
-		Attack(std::string name, unsigned int damage);
-		Attack(std::string name, unsigned int damage, unsigned int energyCost);
+		Attack(std::string const& name, unsigned int damage);
+		Attack(std::string const& name, unsigned int damage, unsigned int energyCost);
 	};
 
-	static const Attack melee;
-	static const Attack ranged;
+	static const Attack	melee;
+	static const Attack	ranged;
 
-	void performAttack(ClapTrap& target, ClapTrap::Attack const& attack);
+	void	performAttack(ClapTrap& target, ClapTrap::Attack const& attack);
 
 public:
 	const std::string	name;
 
-	ClapTrap(std::string name);
+	ClapTrap(std::string const& name);
+	ClapTrap(std::string const& name, unsigned int maxHitPoints,
+		unsigned int maxEnergyPoints, unsigned int armorReduction);
 	~ClapTrap();
 
-	void rangedAttack(ClapTrap& target);
-	void meleeAttack(ClapTrap& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	void	rangedAttack(ClapTrap& target);
+	void	meleeAttack(ClapTrap& target);
+
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
+	void	beEnergized(unsigned int amount);
 };

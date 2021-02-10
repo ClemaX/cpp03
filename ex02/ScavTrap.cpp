@@ -15,16 +15,16 @@ const std::string		ScavTrap::challenges[ScavTrap::challengesCount] =
 
 void ScavTrap::performAttack(ClapTrap& target, Attack const& attack)
 {
-	std::cout << "SC4V-TP ";
+	std::cout << "SC4V-TP " << name;
 	if (attack.cost > energyPoints)
 	{
-		std::cout << "does not have enough energy to use ";
+		std::cout << " does not have enough energy to use ";
 		std::cout << attack.name << "!";
 		std::cout << std::endl;
 	}
 	else
 	{
-		std::cout << "attacks " << target.name << ' ';
+		std::cout << " attacks " << target.name << ' ';
 		std::cout << "with " << attack.name << ", ";
 		std::cout << "causing " << attack.damage << " points of damage!";
 		std::cout << std::endl;

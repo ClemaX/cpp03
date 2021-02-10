@@ -8,12 +8,11 @@
 class ClapTrap
 {
 protected:
-	unsigned int	level;
-
 	unsigned int	maxHitPoints;
 	unsigned int	maxEnergyPoints;
 	unsigned int	armorReduction;
 
+	unsigned int	level;
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
 
@@ -31,14 +30,15 @@ protected:
 	static const Attack	melee;
 	static const Attack	ranged;
 
-	void	performAttack(ClapTrap& target, ClapTrap::Attack const& attack);
+	void	performAttack(ClapTrap& target, Attack const& attack);
+
+	ClapTrap(std::string const& name, unsigned int maxHitPoints,
+		unsigned int maxEnergyPoints, unsigned int armorReduction);
 
 public:
 	const std::string	name;
 
 	ClapTrap(std::string const& name);
-	ClapTrap(std::string const& name, unsigned int maxHitPoints,
-		unsigned int maxEnergyPoints, unsigned int armorReduction);
 	~ClapTrap();
 
 	void	rangedAttack(ClapTrap& target);

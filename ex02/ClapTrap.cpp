@@ -14,31 +14,37 @@ ClapTrap::Attack::Attack(std::string const& name, unsigned int damage, unsigned 
 }
 
 ClapTrap::ClapTrap(std::string const& name)
-	:	level(1),
-		maxHitPoints(100),
+	:	maxHitPoints(100),
 		maxEnergyPoints(100),
 		armorReduction(5),
+		level(1),
 		hitPoints(maxHitPoints),
 		energyPoints(maxEnergyPoints),
 		name(name)
 {
 	std::cout << "CL4P-TP ";
-	std::cout << "Constructing " << name << '!';
+	std::cout << "Constructing " << name;
+	std::cout << " with " << hitPoints << "HP, ";
+	std::cout << energyPoints << "EP, ";
+	std::cout << armorReduction << "AR!";
 	std::cout << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const& name, unsigned int maxHitPoints,
 	unsigned int maxEnergyPoints, unsigned int armorReduction)
-	:	level(1),
-		maxHitPoints(maxHitPoints),
+	:	maxHitPoints(maxHitPoints),
 		maxEnergyPoints(maxEnergyPoints),
 		armorReduction(armorReduction),
+		level(1),
 		hitPoints(maxHitPoints),
 		energyPoints(maxEnergyPoints),
 		name(name)
 {
 	std::cout << "CL4P-TP ";
-	std::cout << "Constructing " << name << '!';
+	std::cout << "Constructing " << name;
+	std::cout << " with " << hitPoints << "HP, ";
+	std::cout << energyPoints << "EP, ";
+	std::cout << armorReduction << "AR!";
 	std::cout << std::endl;
 }
 

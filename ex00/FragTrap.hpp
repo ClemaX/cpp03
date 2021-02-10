@@ -8,12 +8,11 @@
 class FragTrap
 {
 protected:
-	unsigned int	level;
-
 	unsigned int	maxHitPoints;
 	unsigned int	maxEnergyPoints;
 	unsigned int	armorReduction;
 
+	unsigned int	level;
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
 
@@ -23,8 +22,8 @@ protected:
 		const unsigned int	damage;
 		const unsigned int	cost;
 
-		Attack(std::string name, unsigned int damage);
-		Attack(std::string name, unsigned int damage, unsigned int energyCost);
+		Attack(std::string const& name, unsigned int damage);
+		Attack(std::string const& name, unsigned int damage, unsigned int energyCost);
 	};
 
 	static const Attack	melee;

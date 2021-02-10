@@ -8,12 +8,11 @@
 class ScavTrap
 {
 protected:
-	unsigned int	level;
-
 	unsigned int	maxHitPoints;
 	unsigned int	maxEnergyPoints;
 	unsigned int	armorReduction;
 
+	unsigned int	level;
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
 

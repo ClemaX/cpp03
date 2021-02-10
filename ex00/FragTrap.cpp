@@ -13,21 +13,22 @@ const FragTrap::Attack FragTrap::specialAttacks[FragTrap::specialAttacksCount] =
 	FragTrap::Attack("nuclear power", 1000, 25)
 };
 
-FragTrap::Attack::Attack(std::string name, unsigned int damage)
+FragTrap::Attack::Attack(std::string const& name, unsigned int damage)
 	: name(name), damage(damage), cost(0)
 {
 }
 
-FragTrap::Attack::Attack(std::string name, unsigned int damage, unsigned int cost)
+FragTrap::Attack::Attack(std::string const& name, unsigned int damage,
+	unsigned int cost)
 	: name(name), damage(damage), cost(cost)
 {
 }
 
 FragTrap::FragTrap(std::string const& name)
-	:	level(1),
-		maxHitPoints(100),
+	:	maxHitPoints(100),
 		maxEnergyPoints(100),
 		armorReduction(5),
+		level(1),
 		hitPoints(maxHitPoints),
 		energyPoints(maxEnergyPoints),
 		name(name)
@@ -115,7 +116,5 @@ void FragTrap::beEnergized(unsigned int amount)
 
 void FragTrap::vaulthunter_dot_exe(FragTrap& target)
 {
-	const FragTrap::Attack &attack = specialAttacks[rand() % specialAttacksCount];
-
-	performAttack(target, attack);
+	performAttack(target, specialAttacks[rand() % specialAttacksCount]);
 }

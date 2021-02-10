@@ -1,11 +1,9 @@
 #include "FragTrap.hpp"
 
 const FragTrap::Attack FragTrap::melee = Attack("melee", 30);
-
 const FragTrap::Attack FragTrap::ranged = Attack("ranged", 30);
 
 const size_t FragTrap::specialAttacksCount = 5;
-
 const FragTrap::Attack FragTrap::specialAttacks[FragTrap::specialAttacksCount] =
 {
 	FragTrap::Attack("a pan", 5, 25),
@@ -51,13 +49,13 @@ void FragTrap::performAttack(FragTrap& target, FragTrap::Attack const& attack)
 	std::cout << "FR4G-TP " << name;
 	if (attack.cost > energyPoints)
 	{
-		std::cout << " does not have enough energy to use ";
+		std::cout << "does not have enough energy to use ";
 		std::cout << attack.name << "!";
 		std::cout << std::endl;
 	}
 	else
 	{
-		std::cout << " attacks " << target.name << ' ';
+		std::cout << "attacks " << target.name << ' ';
 		std::cout << "with " << attack.name << ", ";
 		std::cout << "causing " << attack.damage << " points of damage!";
 		std::cout << std::endl;

@@ -29,6 +29,7 @@ protected:
 
 	static const Attack	melee;
 	static const Attack	ranged;
+
 	static const size_t	specialAttacksCount;
 	static const Attack	specialAttacks[];
 

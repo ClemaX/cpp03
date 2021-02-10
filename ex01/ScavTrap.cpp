@@ -1,7 +1,9 @@
 #include "ScavTrap.hpp"
 
-const size_t		ScavTrap::challengesCount = 5;
+const ScavTrap::Attack	ScavTrap::melee = ScavTrap::Attack("melee", 20);
+const ScavTrap::Attack	ScavTrap::ranged = ScavTrap::Attack("ranged", 15);
 
+const size_t		ScavTrap::challengesCount = 5;
 const std::string	ScavTrap::challenges[ScavTrap::challengesCount] =
 {
 	"Invent a challenge!",
@@ -10,10 +12,6 @@ const std::string	ScavTrap::challenges[ScavTrap::challengesCount] =
 	"Think about thinking about thinking about inventing a challenge!",
 	"Do not think about inventing a challenge"
 };
-
-const ScavTrap::Attack	ScavTrap::melee = ScavTrap::Attack("melee", 20);
-
-const ScavTrap::Attack	ScavTrap::ranged = ScavTrap::Attack("ranged", 15);
 
 ScavTrap::Attack::Attack(std::string const& name, unsigned int damage)
 	: name(name), damage(damage), cost(0)

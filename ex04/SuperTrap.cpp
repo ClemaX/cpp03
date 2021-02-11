@@ -1,7 +1,9 @@
 #include "SuperTrap.hpp"
 
 SuperTrap::SuperTrap(std::string name)
-    : ClapTrap(name), FragTrap(name), NinjaTrap(name), name(name)
+    :	ClapTrap(name, 100, 60, 5, 0, 0), // TODO
+		FragTrap(name),
+		NinjaTrap(name)
 {
     std::cout << "SUPR-TP ";
 	std::cout << "Constructing " << name << '!';

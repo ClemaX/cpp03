@@ -8,14 +8,6 @@
 class ClapTrap
 {
 protected:
-	unsigned int	maxHitPoints;
-	unsigned int	maxEnergyPoints;
-	unsigned int	armorReduction;
-
-	unsigned int	level;
-	unsigned int	hitPoints;
-	unsigned int	energyPoints;
-
 	struct Attack
 	{
 	public:
@@ -27,13 +19,28 @@ protected:
 		Attack(std::string const& name, unsigned int damage, unsigned int energyCost);
 	};
 
-	static const Attack	melee;
-	static const Attack	ranged;
+	const unsigned int	maxHitPoints;
+	const unsigned int	maxEnergyPoints;
+	const unsigned int	armorReduction;
 
-	void	performAttack(ClapTrap& target, Attack const& attack);
+	const Attack	melee;
+	const Attack	ranged;
 
-	ClapTrap(std::string const& name, unsigned int maxHitPoints,
-		unsigned int maxEnergyPoints, unsigned int armorReduction);
+	unsigned int	level;
+	unsigned int	hitPoints;
+	unsigned int	energyPoints;
+
+
+	virtual void	performAttack(ClapTrap& target, Attack const& attack);
+
+	ClapTrap(
+		std::string const& name,
+		unsigned int maxHitPoints,
+		unsigned int maxEnergyPoints,
+		unsigned int armorReduction,
+		unsigned int meleeDamage,
+		unsigned int rangedDamage
+	);
 
 public:
 	const std::string	name;

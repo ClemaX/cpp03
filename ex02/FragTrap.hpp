@@ -2,7 +2,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 protected:
 	static const size_t	specialAttacksCount;

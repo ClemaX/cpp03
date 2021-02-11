@@ -1,15 +1,19 @@
 #include "ClapTrap.hpp"
 
-const ClapTrap::Attack ClapTrap::melee = Attack("melee", 30);
-const ClapTrap::Attack ClapTrap::ranged = Attack("ranged", 30);
-
 ClapTrap::Attack::Attack(std::string const& name, unsigned int damage)
-	: name(name), damage(damage), cost(0)
+	:	name(name),
+		damage(damage),
+		cost(0)
 {
 }
 
-ClapTrap::Attack::Attack(std::string const& name, unsigned int damage, unsigned int cost)
-	: name(name), damage(damage), cost(cost)
+ClapTrap::Attack::Attack(
+	std::string const& name,
+	unsigned int damage,
+	unsigned int cost
+)	:	name(name),
+		damage(damage),
+		cost(cost)
 {
 }
 
@@ -17,6 +21,8 @@ ClapTrap::ClapTrap(std::string const& name)
 	:	maxHitPoints(100),
 		maxEnergyPoints(100),
 		armorReduction(5),
+		melee("melee", 30),
+		ranged("ranged", 30),
 		level(1),
 		hitPoints(maxHitPoints),
 		energyPoints(maxEnergyPoints),
@@ -30,11 +36,18 @@ ClapTrap::ClapTrap(std::string const& name)
 	std::cout << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string const& name, unsigned int maxHitPoints,
-	unsigned int maxEnergyPoints, unsigned int armorReduction)
-	:	maxHitPoints(maxHitPoints),
+ClapTrap::ClapTrap(
+	std::string const& name,
+	unsigned int maxHitPoints,
+	unsigned int maxEnergyPoints,
+	unsigned int armorReduction,
+	unsigned int meleeDamage,
+	unsigned int rangedDamage
+)	:	maxHitPoints(maxHitPoints),
 		maxEnergyPoints(maxEnergyPoints),
 		armorReduction(armorReduction),
+		melee("melee", meleeDamage),
+		ranged("ranged", rangedDamage),
 		level(1),
 		hitPoints(maxHitPoints),
 		energyPoints(maxEnergyPoints),

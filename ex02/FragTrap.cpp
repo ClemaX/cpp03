@@ -12,7 +12,7 @@ const FragTrap::Attack	FragTrap::specialAttacks[FragTrap::specialAttacksCount] =
 };
 
 FragTrap::FragTrap(std::string name)
-	: ClapTrap(name)
+	:	ClapTrap(name)
 {
 	std::cout << "FR4G-TP ";
 	std::cout << "Constructing " << name << '!';

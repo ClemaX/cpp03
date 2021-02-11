@@ -40,6 +40,11 @@ int main(void)
 
 	std::cout << std::endl;
 
+	e.meleeAttack(f);
+	f.rangedAttack(g);
+
+	std::cout << std::endl;
+
 	e.ninjaShoebox(a);
 	f.ninjaShoebox(c);
 	g.ninjaShoebox(e);

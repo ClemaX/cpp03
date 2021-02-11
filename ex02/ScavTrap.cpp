@@ -1,8 +1,5 @@
 #include "ScavTrap.hpp"
 
-const ScavTrap::Attack	ScavTrap::melee = Attack("melee", 20);
-const ScavTrap::Attack	ScavTrap::ranged = Attack("ranged", 15);
-
 const size_t			ScavTrap::challengesCount = 5;
 const std::string		ScavTrap::challenges[ScavTrap::challengesCount] =
 {
@@ -35,7 +32,7 @@ void ScavTrap::performAttack(ClapTrap& target, Attack const& attack)
 }
 
 ScavTrap::ScavTrap(std::string name)
-	: ClapTrap(name, 100, 50, 3)
+	:	ClapTrap(name, 100, 50, 3, 20, 15)
 {
 	std::cout << "SC4V-TP ";
 	std::cout << "Constructing " << name << '!';

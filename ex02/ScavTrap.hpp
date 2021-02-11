@@ -2,9 +2,12 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 protected:
+	unsigned int	maxEnergyPoints;
+	unsigned int	armorReduction;
+
 	static const Attack melee;
 	static const Attack ranged;
 

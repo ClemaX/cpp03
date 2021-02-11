@@ -1,7 +1,7 @@
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap(std::string name)
-	: ClapTrap(name)
+NinjaTrap::NinjaTrap(std::string const& name)
+	: ClapTrap(name, 60, 120, 0, 60, 5)
 {
 	std::cout << "NNJ4-TP ";
 	std::cout << "Constructing " << name << '!';
@@ -15,10 +15,10 @@ NinjaTrap::~NinjaTrap()
 	std::cout << std::endl;
 }
 
-void NinjaTrap::performAttack(std::string &source, std::string const &target, ClapTrap::Attack const &attack)
-{	
+void NinjaTrap::performAttack(ClapTrap& target, Attack const& attack)
+{
 	std::cout << "NNJ4-TP ";
-	std::cout << source << " attacks " << target << ' ';
+	std::cout << name << " attacks " << target.name << ' ';
 	std::cout << "with " << attack.name << ", ";
 	std::cout << "causing " << attack.damage << " points of damage!";
 	std::cout << std::endl;

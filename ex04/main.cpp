@@ -65,5 +65,7 @@ int main(void)
 	h.ninjaShoebox(c);
 	h.ninjaShoebox(e);
 
+	std::cout << std::endl;
+
 	return 0;
 }

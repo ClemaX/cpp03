@@ -5,13 +5,10 @@
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {
-public:
-    using NinjaTrap::melee;
-    using FragTrap::ranged;
+protected:
+	void performAttack(ClapTrap& target, Attack const& attack);
 
+public:
     SuperTrap(std::string name);
     ~SuperTrap();
-
-    using FragTrap::rangedAttack;
-    using NinjaTrap::meleeAttack;
 };

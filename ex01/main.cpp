@@ -23,8 +23,6 @@ int main(void)
 
 	std::cout << std::endl;
 
-	a.beEnergized(4 * 25);
-
 	for (std::size_t i = 0; i < 5; i++)
 		a.vaulthunter_dot_exe(b);
 

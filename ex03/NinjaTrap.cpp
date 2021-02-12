@@ -18,10 +18,22 @@ NinjaTrap::~NinjaTrap()
 void NinjaTrap::performAttack(ClapTrap& target, Attack const& attack)
 {
 	std::cout << "NNJ4-TP ";
-	std::cout << name << " attacks " << target.name << ' ';
-	std::cout << "with " << attack.name << ", ";
-	std::cout << "causing " << attack.damage << " points of damage!";
-	std::cout << std::endl;
+	if (attack.cost > energyPoints)
+	{
+		std::cout << " does not have enough energy to use ";
+		std::cout << attack.name << "!";
+		std::cout << std::endl;
+	}
+	else
+	{
+		std::cout << " attacks " << target.name << ' ';
+		std::cout << "with " << attack.name << ", ";
+		std::cout << "causing " << attack.damage << " points of damage!";
+		std::cout << std::endl;
+
+		energyPoints -= attack.cost;
+		target.takeDamage(attack.damage);
+	}
 }
 
 void NinjaTrap::ninjaShoebox(FragTrap const &frag)
